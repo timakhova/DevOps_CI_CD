@@ -5,7 +5,7 @@
 `Приведите ответ в свободной форме........`
 
 1. `Установила jenkins по оффиц. инструкции`
-!(https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png)
+!(https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png)https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png
 2. 
 3. `Заполните здесь этапы выполнения, если требуется ....`
 4. `Заполните здесь этапы выполнения, если требуется ....`
@@ -24,7 +24,7 @@ sudo apt-get install jenkins
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
+![Название скриншота 1]([ссылка на скриншот 1](https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png))`
 
 
 ---
