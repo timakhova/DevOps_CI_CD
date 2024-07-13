@@ -15,44 +15,49 @@
 
 ### Задание 3
 
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+1. Установила нексус по инструкции с сайта https://timeweb.cloud/tutorials/cloud/ustanovka-i-ispolzovanie-nexus-repository-dlya-hraneniya-artefaktov https://github.com/timakhova/DevOps_CI_CD/blob/main/3-1%20nexus%20works.png
+2. Зашла в акк: https://github.com/timakhova/DevOps_CI_CD/blob/main/3-2%20nexus%20web.png
+3. Код для пайплайна:
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+pipeline {
+    agent any
+
+    environment {
+        NEXUS_URL = 'http://158.160.160.168:8081'
+        NEXUS_REPO = 'go-binaries'
+        NEXUS_CREDENTIALS_ID = 'nexus-credentials'
+        PATH = "/snap/bin:$PATH"
+    }
+
+    stages {
+        stage('Git') {
+            steps {
+                git 'https://github.com/netology-code/sdvps-materials.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'go build -o app .'
+            }
+        }
+        stage('Upload to Nexus') {
+            steps {
+                script {
+                    def fileName = 'app'
+                    def filePath = "${WORKSPACE}/${fileName}"
+                    def nexusUploadUrl = "${NEXUS_URL}/repository/${NEXUS_REPO}/${fileName}"
+
+                    withCredentials([usernamePassword(credentialsId: "${NEXUS_CREDENTIALS_ID}", usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASSWORD')]) {
+                        sh """
+                        curl -u ${NEXUS_USER}:${NEXUS_PASSWORD} --upload-file ${filePath} ${nexusUploadUrl}
+                        """
+                    }
+                }
+            }
+        }
+    }
+}
+
 ```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
-
-### Задание 4
-
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
-
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+4. Работает: https://github.com/timakhova/DevOps_CI_CD/blob/main/3-3%20done.png, https://github.com/timakhova/DevOps_CI_CD/blob/main/3-4%20done.png
