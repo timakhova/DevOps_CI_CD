@@ -4,7 +4,7 @@
 
 `Приведите ответ в свободной форме........`
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
+1. `Установила jenkins по оффиц. инструкции`
 2. `Заполните здесь этапы выполнения, если требуется ....`
 3. `Заполните здесь этапы выполнения, если требуется ....`
 4. `Заполните здесь этапы выполнения, если требуется ....`
@@ -12,11 +12,13 @@
 6. 
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
 ```
 
 `При необходимости прикрепитe сюда скриншоты
