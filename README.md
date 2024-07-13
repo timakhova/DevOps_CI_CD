@@ -9,6 +9,34 @@
 
 ### Задание 2
 
+Мой код:
+
+```
+pipeline {
+ agent any
+ stages {
+  stage('Git') {
+   steps {git 'https://github.com/netology-code/sdvps-materials.git'}
+  }
+  stage('Test') {
+   steps {
+    sh 'go test .'
+   }
+  }
+  stage('Build') {
+   steps {
+    sh 'docker build . -t ubuntu-bionic:8082/hello-world:v$BUILD_NUMBER'
+   }
+  }
+  stage('Push') {
+   steps {
+    sh 'docker login ubuntu-bionic:8082 -u admin -p admin && docker push ubuntu-bionic:8082/hello-world:v$BUILD_NUMBER && docker logout'   }
+  }
+ }
+}
+
+```
+
 1. https://github.com/timakhova/DevOps_CI_CD/blob/main/2-1.png
 2. https://github.com/timakhova/DevOps_CI_CD/blob/main/2-2.png
 3. https://github.com/timakhova/DevOps_CI_CD/blob/main/2-3.png
