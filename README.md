@@ -2,32 +2,10 @@
 
 ### Задание 1
 
-`Приведите ответ в свободной форме........`
-
-1. `Установила jenkins по оффиц. инструкции`
-![(https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png)]
-2. 
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. `Заполните здесь этапы выполнения, если требуется ....`
-7. 
-
-```
-sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
-  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
-sudo apt-get update
-sudo apt-get install jenkins
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1]([ссылка на скриншот 1]())`
-
-
----
+1. Установила jenkins по оффиц. инструкции: https://github.com/timakhova/DevOps_CI_CD/blob/main/jenkins%20works.png
+2. Открыла дженкинс в браузере http://172.24.60.144:8080/ https://github.com/timakhova/DevOps_CI_CD/blob/main/jenkins%20LK.png
+3. Установила гоуланг командами https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png
+4. Создала Freestyle Project по инструкции в лекции, всё запустилось: https://github.com/timakhova/DevOps_CI_CD/blob/main/saksess-1.png, https://github.com/timakhova/DevOps_CI_CD/blob/main/saksess-2.png, https://github.com/timakhova/DevOps_CI_CD/blob/main/saksess-3.png
 
 ### Задание 2
 
@@ -41,18 +19,6 @@ sudo apt-get install jenkins
 6. 
 
 ```
-Поле для вставки кода...
-....
-....
-....
-....
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
-
-
----
 
 ### Задание 3
 
