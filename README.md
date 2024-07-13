@@ -3,7 +3,7 @@
 ### Задание 1
 
 1. Установила jenkins по оффиц. инструкции: https://github.com/timakhova/DevOps_CI_CD/blob/main/jenkins%20works.png
-2. Открыла дженкинс в браузере http://172.24.60.144:8080/ https://github.com/timakhova/DevOps_CI_CD/blob/main/jenkins%20LK.png
+2. Открыла дженкинс в браузере: https://github.com/timakhova/DevOps_CI_CD/blob/main/jenkins%20LK.png
 3. Установила гоуланг командами https://github.com/timakhova/DevOps_CI_CD/blob/main/go%20vstal.png
 4. Создала Freestyle Project по инструкции в лекции, всё запустилось: https://github.com/timakhova/DevOps_CI_CD/blob/main/saksess-1.png, https://github.com/timakhova/DevOps_CI_CD/blob/main/saksess-2.png, https://github.com/timakhova/DevOps_CI_CD/blob/main/saksess-3.png
 
